@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import { FaUser } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import logo from "../../assets/logo/logo.png";
 import { AuthContext } from "../../context/AuthProvider";
@@ -19,9 +20,6 @@ const Header = () => {
           </li>
           <li className="font-semibold">
             <Link to="/blog">Blog</Link>
-          </li>
-          <li className="font-semibold">
-            <Link to="/login">Login</Link>
           </li>
           {
           user?.email && <>
@@ -71,8 +69,21 @@ const Header = () => {
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal p-0">{navItem}</ul>
       </div>
-      <div className="navbar-end">
-        {user?.email && <button onClick={handleLogOut} className="btn mr-20">Log out</button>}
+      <div className="navbar-end mr-14">
+        {
+                user?.uid ?
+            <>
+              <div class="tooltip tooltip-left" data-tip={user?.displayName}>
+              <img className="w-9 rounded-full mr-5" src={user?.photoURL} alt="" />
+                  </div>
+                  <button onClick={handleLogOut} className="btn">Log out</button>
+                  </>
+            :
+            <>
+            <FaUser className="text-3xl text-purple-800 mr-5"></FaUser>
+            <Link className="font-semibold btn" to="/login">Login</Link>
+            </>
+              }
       </div>
     </div>
   );

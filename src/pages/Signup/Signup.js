@@ -1,47 +1,50 @@
 import React, { useContext } from "react";
+import toast from "react-hot-toast";
 import { Link } from "react-router-dom";
-import google from '../../assets/button/google.png';
+import google from "../../assets/button/google.png";
 import image from "../../assets/Signup/signup.jpg";
 import { AuthContext } from "../../context/AuthProvider";
 
 const Signup = () => {
-    const { signInWithGoogle, createUser, updateUserProfile } = useContext(AuthContext);
+  const { signInWithGoogle, createUser, updateUserProfile } =
+    useContext(AuthContext);
 
-    const handleGoogleSignUP = () => {
-        signInWithGoogle()
-            .then(result => {
-            const user = result.user
-            console.log(user)
-            })
-        .catch(err => console.error(err))
-    }
+  const handleGoogleSignUP = () => {
+    signInWithGoogle()
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+        toast.success("Sign Up Successfully");
+      })
+      .catch((err) => console.error(err));
+  };
 
-    const handleSignUp = e => {
-        e.preventDefault()
-        const form = e.target
-        const name = form.name.value
-        const photoURL = form.photoURL.value
-        const email = form.email.value 
-        const password = form.password.value
-        console.log(name, photoURL, email, password)
+  const handleSignUp = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const name = form.name.value;
+    const photoURL = form.photoURL.value;
+    const email = form.email.value;
+    const password = form.password.value;
 
-        createUser(email, password)
-            .then(result => {
-            const user = result.user
-            console.log(user)
-            form.reset()
-            handleUpdateUserProfile(name, photoURL)
-        })
-        .catch(err => console.error(err))
-    }
+    createUser(email, password)
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+        form.reset();
+        handleUpdateUserProfile(name, photoURL);
+        toast.success("Sign Up Successfully");
+      })
+      .catch((err) => console.error(err));
+  };
 
-    const handleUpdateUserProfile = (name, photoURL) => {
-        const profile = {
-          displayName: name,
-          photoURL: photoURL,
-        };
-        updateUserProfile(profile);
-      };
+  const handleUpdateUserProfile = (name, photoURL) => {
+    const profile = {
+      displayName: name,
+      photoURL: photoURL,
+    };
+    updateUserProfile(profile);
+  };
 
   return (
     <div className="hero w-full my-28">

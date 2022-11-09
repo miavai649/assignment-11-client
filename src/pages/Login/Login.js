@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import toast from "react-hot-toast";
 import { Link } from "react-router-dom";
 import google from '../../assets/button/google.png';
 import image from "../../assets/login/login.jpg";
@@ -6,15 +7,31 @@ import { AuthContext } from "../../context/AuthProvider";
 
 const Login = () => {
 
-    const { signInWithGoogle } = useContext(AuthContext);
+    const { signInWithGoogle, login } = useContext(AuthContext);
 
     const handleGoogleSignUP = () => {
         signInWithGoogle()
             .then(result => {
             const user = result.user
             console.log(user)
+            toast.success('Logged in Successfully')
             })
         .catch(err => console.error(err))
+    }
+
+    const handleLogin = e => {
+        e.preventDefault()
+        const form = e.target
+        const email = form.email.value
+        const password = form.password.value
+
+        login(email, password)
+            .then(result => {
+            const user = result.user
+            console.log(user)
+            form.reset()
+            toast.success('Logged in Successfully')
+        })
     }
 
   return (
@@ -25,13 +42,13 @@ const Login = () => {
         </div>
         <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100 py-16">
           <h1 className="text-5xl text-center font-bold">Login</h1>
-          <form className="card-body">
+          <form onSubmit={handleLogin} className="card-body">
             <div className="form-control">
               <label className="label">
                 <span className="label-text">Email</span>
               </label>
               <input
-                type="text"
+                type="email"
                 placeholder="Your email"
                 name="email"
                 className="input input-bordered"
