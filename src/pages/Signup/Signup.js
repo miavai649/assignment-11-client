@@ -5,7 +5,7 @@ import image from "../../assets/Signup/signup.jpg";
 import { AuthContext } from "../../context/AuthProvider";
 
 const Signup = () => {
-    const { signInWithGoogle, createUser } = useContext(AuthContext);
+    const { signInWithGoogle, createUser, updateUserProfile } = useContext(AuthContext);
 
     const handleGoogleSignUP = () => {
         signInWithGoogle()
@@ -29,9 +29,19 @@ const Signup = () => {
             .then(result => {
             const user = result.user
             console.log(user)
+            form.reset()
+            handleUpdateUserProfile(name, photoURL)
         })
         .catch(err => console.error(err))
     }
+
+    const handleUpdateUserProfile = (name, photoURL) => {
+        const profile = {
+          displayName: name,
+          photoURL: photoURL,
+        };
+        updateUserProfile(profile);
+      };
 
   return (
     <div className="hero w-full my-28">
