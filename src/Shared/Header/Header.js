@@ -73,7 +73,7 @@ const Header = () => {
         {
                 user?.uid ?
             <>
-              <div class="tooltip tooltip-left" data-tip={user?.displayName}>
+              <div className="tooltip tooltip-left" data-tip={user?.displayName}>
               <img className="w-9 rounded-full mr-5" src={user?.photoURL} alt="" />
                   </div>
                   <button onClick={handleLogOut} className="btn">Log out</button>

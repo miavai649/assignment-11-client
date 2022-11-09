@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "title": "Chocolate peanut butter cake",
+    "image": "https://www.livewellbakeoften.com/wp-content/uploads/2022/02/Chocolate-Peanut-Butter-Cake-11.jpg",
+    "details": "Chocolate cake and fluffy mousse filling made with rich peanut butter cream this 3 layers cake is iced with full chocolate mousse and drizzled with chocolate fudge",
+    "ingredient": "I only use natural and premium quality ingredients and “say NO to preservatives and synthetic ingredients”.",
+    "rating": 4.5,
+    "price": 175
+  },
+  {
+    "id": 2,
+    "title": "Black Forest Cake",
+    "image": "https://www.allrecipes.com/thmb/o2UN1BbSpBSF-4csMYB_n5k3CGY=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/8095-black-forest-cake-kim-2000-3a486ab6368d461cb446830016661d17.jpg",
+    "details": "Strong flavour of moist dark chocolate with 3 layers rich chocolate cake with double coated full fluffy whipped cream,and beautifully decorated with juicy cherries for cake toppings.",
+    "ingredient": "I only use natural and premium quality ingredients and “say NO to preservatives and synthetic ingredients”.",
+    "rating": 4.9,
+    "price": 200
+  },
+  {
+    "id": 3,
+    "title": "Red velvet cheese cake",
+    "image": "https://www.cakexpo.com/wp-content/uploads/2021/06/14.jpg",
+    "details": "A deeply flavourful and textured cake true to its name velvety smooth frostate with fresh cream cheese icing. And also decorated with dollops of cream cheese icing and sprinkles.",
+    "ingredient": "I only use natural and premium quality ingredients and “say NO to preservatives and synthetic ingredients”.",
+    "rating": 4.6,
+    "price": 180
+  },
+  {
+    "id": 4,
+    "title": "Chocolate Mousse cake",
+    "image": "https://erinireland.ca/wp-content/uploads/2020/09/68B18765-0CA1-477F-A31F-596753E32898-1.jpg",
+    "details": "A lightly sweeted chocolate sponge cake layered with fluffy and creamy chocolate mousse. then top of the cake with a layer of decadent chocolate ganache and finish the cake with a chocolate lace for an elegant design.",
+    "ingredient": "I only use natural and premium quality ingredients and “say NO to preservatives and synthetic ingredients”.",
+    "rating": 4.5,
+    "price": 150
+  },
+  {
+    "id": 5,
+    "title": "White Forest cake",
+    "image": "https://imgcdn.floweraura.com/Re-Shoot-Cake-11-A.jpg",
+    "details": "A very soft and smooth six-inch layer cake made of white cake layered with white lace filling and beautifully decorated with a white chocolate whipped cream for frosting and make it elegant.",
+    "ingredient": "I only use natural and premium quality ingredients and “say NO to preservatives and synthetic ingredients”.",
+    "rating": 4.5,
+    "price": 166
+  },
+  {
+    "id": 6,
+    "title": "Tiramisu cake",
+    "image": "https://www.supergoldenbakes.com/wordpress/wp-content/uploads/2020/03/Tiramisu-2-500x375.jpg",
+    "details": "This 3 layers Tiramisu Cake is made of genoise cake layers brushed with espresso and filled with irresistibly creamy coffee mascarpone cream and decorated by coffee powder for make it more gorgeous.",
+    "ingredient": "I only use natural and premium quality ingredients and “say NO to preservatives and synthetic ingredients”.",
+    "rating": 4.7,
+    "price": 215
+  }
+]
