@@ -5,7 +5,7 @@ import image from "../../assets/Signup/signup.jpg";
 import { AuthContext } from "../../context/AuthProvider";
 
 const Signup = () => {
-    const { signInWithGoogle } = useContext(AuthContext);
+    const { signInWithGoogle, createUser } = useContext(AuthContext);
 
     const handleGoogleSignUP = () => {
         signInWithGoogle()
@@ -13,6 +13,23 @@ const Signup = () => {
             const user = result.user
             console.log(user)
             })
+        .catch(err => console.error(err))
+    }
+
+    const handleSignUp = e => {
+        e.preventDefault()
+        const form = e.target
+        const name = form.name.value
+        const photoURL = form.photoURL.value
+        const email = form.email.value 
+        const password = form.password.value
+        console.log(name, photoURL, email, password)
+
+        createUser(email, password)
+            .then(result => {
+            const user = result.user
+            console.log(user)
+        })
         .catch(err => console.error(err))
     }
 
@@ -24,7 +41,7 @@ const Signup = () => {
         </div>
         <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100 py-16">
           <h1 className="text-5xl text-center font-bold">Sign Up</h1>
-          <form className="card-body">
+          <form onSubmit={handleSignUp} className="card-body">
             <div className="form-control">
               <label className="label">
                 <span className="label-text">Name</span>
@@ -34,6 +51,19 @@ const Signup = () => {
                 placeholder="Your Name"
                 name="name"
                 className="input input-bordered"
+                required
+              />
+            </div>
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text">Photo URL</span>
+              </label>
+              <input
+                type="text"
+                placeholder="Your Photo"
+                name="photoURL"
+                className="input input-bordered"
+                required
               />
             </div>
             <div className="form-control">
@@ -41,10 +71,11 @@ const Signup = () => {
                 <span className="label-text">Email</span>
               </label>
               <input
-                type="text"
+                type="email"
                 placeholder="Your email"
                 name="email"
                 className="input input-bordered"
+                required
               />
             </div>
             <div className="form-control">
@@ -56,6 +87,7 @@ const Signup = () => {
                 placeholder="Your password"
                 name="password"
                 className="input input-bordered"
+                required
               />
             </div>
             <div className="form-control mt-6">

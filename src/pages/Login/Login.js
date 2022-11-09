@@ -1,9 +1,22 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import google from '../../assets/button/google.png';
 import image from "../../assets/login/login.jpg";
+import { AuthContext } from "../../context/AuthProvider";
 
 const Login = () => {
+
+    const { signInWithGoogle } = useContext(AuthContext);
+
+    const handleGoogleSignUP = () => {
+        signInWithGoogle()
+            .then(result => {
+            const user = result.user
+            console.log(user)
+            })
+        .catch(err => console.error(err))
+    }
+
   return (
     <div className="hero w-full my-28">
       <div className="hero-content gap-20 grid md:grid-cols-2 flex-col lg:flex-row">
@@ -47,7 +60,7 @@ const Login = () => {
           <div className="text-center mb-6">
             <p className="text-xl">or login with</p>
             <div className="divider my-0 w-3/5 mx-auto"></div>
-            <button><img className="w-28" src={google} alt="" /></button>
+            <button onClick={handleGoogleSignUP}><img className="w-28" src={google} alt="" /></button>
           </div>
           <p className="text-center">
             Don't have an account?{" "}
