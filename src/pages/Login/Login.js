@@ -50,7 +50,7 @@ const Login = () => {
             <button><img className="w-28" src={google} alt="" /></button>
           </div>
           <p className="text-center">
-            Don't have an account{" "}
+            Don't have an account?{" "}
             <Link className="text-orange-600 font-bold" to="/signup">
               Sign Up
             </Link>
