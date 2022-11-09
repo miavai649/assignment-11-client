@@ -1,10 +1,11 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import image from '../../assets/Signup/signup.jpg';
+import React from "react";
+import { Link } from "react-router-dom";
+import google from '../../assets/button/google.png';
+import image from "../../assets/Signup/signup.jpg";
 
 const Signup = () => {
-    return (
-        <div className="hero w-full my-28">
+  return (
+    <div className="hero w-full my-28">
       <div className="hero-content gap-20 grid md:grid-cols-2 flex-col lg:flex-row">
         <div className="text-center lg:text-left">
           <img className="w-5/6" src={image} alt="" />
@@ -53,6 +54,13 @@ const Signup = () => {
               />
             </div>
           </form>
+          <div className="text-center mb-6">
+            <p className="text-xl">or login with</p>
+            <div className="divider my-0 w-3/5 mx-auto"></div>
+            <button>
+              <img className="w-28" src={google} alt="" />
+            </button>
+          </div>
           <p className="text-center">
             Already have an account{" "}
             <Link className="text-orange-600 font-bold" to="/login">
@@ -62,7 +70,7 @@ const Signup = () => {
         </div>
       </div>
     </div>
-    );
+  );
 };
 
 export default Signup;
