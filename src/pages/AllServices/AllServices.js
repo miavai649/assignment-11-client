@@ -6,7 +6,7 @@ const AllServices = () => {
     useTitle('All Product')
   const [products, setProducts] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/allServices")
+    fetch("https://b6a11-service-review-server-side-miavai649.vercel.app/allServices")
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, []);

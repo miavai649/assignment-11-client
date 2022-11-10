@@ -18,7 +18,7 @@ const AddService = () => {
             details: form.details.value
         }
 
-        fetch('http://localhost:5000/cakes', {
+        fetch('https://b6a11-service-review-server-side-miavai649.vercel.app/cakes', {
             method: "POST",
             headers: {
                 "content-type": "application/json"
