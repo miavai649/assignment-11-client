@@ -1,10 +1,14 @@
 import React from 'react';
 import { FaArrowRight } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import useTitle from '../../../hooks/useTitle';
+import About from '../About/About';
 import Banner from '../Banner/Banner';
+import Gallery from '../Gallery/Gallery';
 import Services from '../Services/Services';
 
 const Home = () => {
+    useTitle('Home')
     return (
         <div>
             <div className='text-center'>
@@ -14,7 +18,8 @@ const Home = () => {
             </div>
             <Banner></Banner>
             <Services></Services>
-            
+            <About></About>
+            <Gallery></Gallery>
         </div>
     );
 };

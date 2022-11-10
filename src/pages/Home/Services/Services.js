@@ -10,7 +10,7 @@ const Services = () => {
         .then(data => setServices(data))
     },[])
     return (
-        <div className='my-28 container mx-auto'>
+        <div className='my-20 container mx-auto'>
             <h2 className='text-center text-5xl'>Bestseller Cakes</h2>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 my-8'>
                 {
@@ -18,7 +18,7 @@ const Services = () => {
                 }
             </div>
             <div className='text-center'>
-            <Link className='btn my-10 px-28' to='/services'>See ALL</Link>
+            <Link className='btn my-5 px-28' to='/services'>See ALL</Link>
             </div>
         </div>
     );

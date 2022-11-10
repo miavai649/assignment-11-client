@@ -4,9 +4,10 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import google from '../../assets/button/google.png';
 import image from "../../assets/login/login.jpg";
 import { AuthContext } from "../../context/AuthProvider";
+import useTitle from "../../hooks/useTitle";
 
 const Login = () => {
-
+    useTitle('Login')
     const { signInWithGoogle, login } = useContext(AuthContext);
     const navigate = useNavigate()
   const location = useLocation()

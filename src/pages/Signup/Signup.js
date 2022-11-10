@@ -4,8 +4,10 @@ import { Link } from "react-router-dom";
 import google from "../../assets/button/google.png";
 import image from "../../assets/Signup/signup.jpg";
 import { AuthContext } from "../../context/AuthProvider";
+import useTitle from "../../hooks/useTitle";
 
 const Signup = () => {
+    useTitle('Sign up')
   const { signInWithGoogle, createUser, updateUserProfile } =
     useContext(AuthContext);
 

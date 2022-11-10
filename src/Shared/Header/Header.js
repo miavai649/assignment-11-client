@@ -62,7 +62,7 @@ const Header = () => {
           </ul>
         </div>
           <img className="w-14 mx-5" src={logo} alt="" />
-        <Link className="btn btn-ghost normal-case text-xl">
+        <Link to='/' className="btn btn-ghost normal-case text-xl">
             MY Cake House
         </Link>
       </div>
