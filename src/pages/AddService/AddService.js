@@ -1,11 +1,41 @@
 import React, { useContext } from 'react';
+import toast from 'react-hot-toast';
 import { AuthContext } from '../../context/AuthProvider';
 
 const AddService = () => {
     const {user} = useContext(AuthContext)
+
+    const handleSubmit = e => {
+        e.preventDefault()
+        const form = e.target
+        const service = {
+            name: form.name.value,
+            photoURL: form.photoURL.value,
+            price: form.price.value,
+            email: form.email.value,
+            details: form.details.value
+        }
+
+        fetch('http://localhost:5000/cakes', {
+            method: "POST",
+            headers: {
+                "content-type": "application/json"
+            },
+            body: JSON.stringify(service)
+        })
+        .then(res => res.json())
+      .then(data => {
+        console.log(data)
+        toast.success('Order placed Successfully')
+        form.reset()
+      })
+    .catch(err => console.error(err))
+
+    }
+
     return (
         <div>
-      <form className='mx-80'>
+      <form onSubmit={handleSubmit} className='mx-80'>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
         <input
           type="text"
