@@ -1,5 +1,5 @@
 # Website name: `My Cake House`
-### website link: (https://assignment-10-2cb68.web.app/)
+### website link: (https://assignment-11-4e916.web.app/)
 
 ### Some features and functionalities are...
 * I used a toggle button in the navigation bar
@@ -9,7 +9,8 @@
 * It can easily accessible from any kind of smart device
 
 ### Build with...
-* React Bootstrap
+* tailwind css
+* daisy ui
 * React app
 * Hot toast
 * React icons

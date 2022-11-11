@@ -18,7 +18,7 @@ const AddService = () => {
             details: form.details.value
         }
 
-        fetch('https://b6a11-service-review-server-side-miavai649.vercel.app/cakes', {
+        fetch('https://assignment-11-server-omega-one.vercel.app/cakes', {
             method: "POST",
             headers: {
                 "content-type": "application/json"

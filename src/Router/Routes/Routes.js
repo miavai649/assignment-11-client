@@ -8,6 +8,7 @@ import Home from "../../pages/Home/Home/Home";
 import Login from "../../pages/Login/Login";
 import MyReviews from "../../pages/MyReviews/MyReviews";
 import Signup from "../../pages/Signup/Signup";
+import Update from "../../pages/Update/Update";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 
 const router = createBrowserRouter([
@@ -46,7 +47,11 @@ const router = createBrowserRouter([
             {
                 path: '/details/:id',
                 element: <Details></Details>,
-                loader: ({params}) => fetch(`https://b6a11-service-review-server-side-miavai649.vercel.app/product/${params.id}`)
+                loader: ({params}) => fetch(`https://assignment-11-server-omega-one.vercel.app/product/${params.id}`)
+            },
+            {
+                path: '/update/:id',
+                element: <Update></Update>
             }
         ]
     }
